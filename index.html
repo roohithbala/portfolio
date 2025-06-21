@@ -209,6 +209,16 @@
           </div>
         </div>
         <div class="timeline-item mb-4">
+          <div class="timeline-icon bg-info text-white"><i class="fa fa-users"></i></div>
+          <div class="timeline-content">
+            <h5>Executive Member, CSD Coding Club <span class="badge bg-secondary ms-2">2024 - Present</span></h5>
+            <div class="text-muted mb-1">Computer Science And Design Coding Club</div>
+            <div>
+              Organized coding events, national level hackathon, and technical workshops to foster coding culture and peer learning.
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item mb-4">
           <div class="timeline-icon bg-success text-white"><i class="fa fa-trophy"></i></div>
           <div class="timeline-content">
             <h5>Hawk Eyes Coding Event <span class="badge bg-secondary ms-2">2024</span></h5>
@@ -243,7 +253,7 @@
       <p class="text-muted text-center mb-4">Have a project in mind or want to discuss potential opportunities? Feel free to reach out!</p>
       <div class="row justify-content-center">
         <div class="col-lg-6">
-          <form action="#" method="POST" class="bg-white p-4 rounded shadow-sm">
+          <form id="contactForm" action="#" method="POST" class="bg-white p-4 rounded shadow-sm"></form>
             <div class="mb-3">
               <label for="name" class="form-label">Name</label>
               <input type="text" class="form-control" id="name" name="name" required>
@@ -258,7 +268,21 @@
             </div>
             <button type="submit" class="btn btn-primary w-100">Send Message</button>
           </form>
+          <div id="contactSuccess" class="alert alert-success mt-3 d-none"></div>
         </div>
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contactForm');
+            const successDiv = document.getElementById('contactSuccess');
+            form.addEventListener('submit', function(e) {
+              e.preventDefault();
+              const name = document.getElementById('name').value;
+              form.classList.add('d-none');
+              successDiv.textContent = `Thank you, ${name}! We will contact you soon.`;
+              successDiv.classList.remove('d-none');
+            });
+          });
+        </script>
         <div class="col-lg-4 mt-4 mt-lg-0">
           <div class="bg-white p-4 rounded shadow-sm h-100">
             <h5 class="mb-3">Contact Information</h5>
