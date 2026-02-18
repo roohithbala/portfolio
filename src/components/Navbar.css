@@ -10,9 +10,9 @@
 
 .navbar.scrolled {
   padding: 1rem 0;
-  background: rgba(10, 10, 10, 0.8);
+  background: var(--nav-bg);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--glass-border);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
@@ -26,6 +26,7 @@
   font-size: 1.8rem;
   font-weight: 800;
   letter-spacing: -1px;
+  color: var(--text-primary);
 }
 
 .logo .dot {
@@ -61,6 +62,7 @@
   font-size: 0.95rem;
   opacity: 0.8;
   position: relative;
+  color: var(--text-primary);
 }
 
 .nav-link:hover {
@@ -87,13 +89,14 @@
   display: flex;
   gap: 1rem;
   margin-left: 1rem;
-  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 1px solid var(--glass-border);
   padding-left: 1.5rem;
 }
 
 .social-icons a {
   font-size: 1.2rem;
   opacity: 0.8;
+  color: var(--text-primary);
 }
 
 .social-icons a:hover {
@@ -105,7 +108,7 @@
 .menu-toggle {
   display: none;
   background: none;
-  color: white;
+  color: var(--text-primary);
   font-size: 1.5rem;
 }
 
@@ -114,10 +117,10 @@
   top: 100%;
   left: 0;
   width: 100%;
-  background: rgba(10, 10, 10, 0.95);
+  background: var(--nav-bg);
   backdrop-filter: blur(15px);
   padding: 1rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid var(--glass-border);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -130,10 +133,11 @@
   font-weight: 600;
   width: 100%;
   text-align: center;
+  color: var(--text-primary);
 }
 
 .mobile-link:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--glass-bg);
   color: var(--accent-color);
 }
 
@@ -143,6 +147,7 @@
   margin-top: 1rem;
   margin-bottom: 1rem;
   font-size: 1.2rem;
+  color: var(--text-primary);
 }
 
 @media (max-width: 768px) {
