@@ -1,47 +1,33 @@
 import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaPaperPlane, FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa';
+import emailjs from '@emailjs/browser';
 import './Contact.css';
 
 const Contact = () => {
   const formRef = useRef();
   const [formStatus, setFormStatus] = useState(null);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setFormStatus('sending');
 
-    const formData = new FormData(formRef.current);
-    const data = {
-      name: formData.get('name'),
-      email: formData.get('email'),
-      message: formData.get('message')
-    };
-
-    try {
-      const response = await fetch('http://localhost:5000/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-      });
-
-      if (response.ok) {
+    emailjs.sendForm(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      formRef.current,
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    )
+      .then((result) => {
         setFormStatus('success');
         formRef.current.reset();
         setTimeout(() => setFormStatus(null), 5000);
-      } else {
+      }, (error) => {
+        console.error('Error:', error);
         setFormStatus('error');
-        alert('Failed to send message. Please try again later.');
+        alert('Failed to send message. Please check your EmailJS configuration.');
         setTimeout(() => setFormStatus(null), 3000);
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      setFormStatus('error');
-      alert('Network error. Please make sure the backend server is running.');
-      setTimeout(() => setFormStatus(null), 3000);
-    }
+      });
   };
 
   return (
