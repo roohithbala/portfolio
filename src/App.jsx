@@ -8,12 +8,24 @@ import Experience from './components/Experience'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import CustomCursor from './components/CustomCursor'
+import { motion } from 'framer-motion';
 
 function App() {
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
+  };
+
   return (
     <>
       <CustomCursor />
-      <Navbar />
+      <Navbar theme={theme} toggleTheme={toggleTheme} />
       <main>
         <Hero />
         <About />
@@ -24,27 +36,16 @@ function App() {
       </main>
       <Footer />
       {/* Scroll to Top Button */}
-      <div 
+      <motion.button
         className="scroll-to-top"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        style={{
-          position: 'fixed',
-          bottom: '30px',
-          right: '30px',
-          background: 'var(--accent-color)',
-          width: '50px',
-          height: '50px',
-          borderRadius: '50%',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          cursor: 'pointer',
-          zIndex: 100,
-          boxShadow: '0 4px 15px rgba(0, 212, 255, 0.4)'
-        }}
       >
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m18 15-6-6-6 6"/></svg>
-      </div>
+        ↑
+      </motion.button>
     </>
   )
 }

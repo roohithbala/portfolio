@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import { FaGithub, FaLinkedin, FaBars, FaTimes } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaBars, FaTimes, FaSun, FaMoon } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import './Navbar.css';
 
-const Navbar = () => {
+const Navbar = ({ theme, toggleTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -37,6 +37,9 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
+          <button className="theme-toggle" onClick={toggleTheme}>
+            {theme === 'dark' ? <FaSun /> : <FaMoon />}
+          </button>
           <div className="social-icons">
             <a href="https://github.com/roohithbala" target="_blank" rel="noopener noreferrer">
               <FaGithub />

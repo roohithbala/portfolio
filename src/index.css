@@ -9,6 +9,20 @@
   --glass-border: rgba(255, 255, 255, 0.1);
   --card-hover: rgba(255, 255, 255, 0.1);
   --font-main: 'Inter', sans-serif;
+  --nav-bg: rgba(10, 10, 10, 0.8);
+}
+
+[data-theme="light"] {
+  --bg-color: #f0f2f5;
+  --bg-gradient: linear-gradient(135deg, #f0f2f5 0%, #e1e4e8 100%);
+  --text-primary: #1a1a2e;
+  --text-secondary: #4a4a4a;
+  --accent-color: #007bff;
+  --accent-gradient: linear-gradient(90deg, #007bff 0%, #0056b3 100%);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(0, 0, 0, 0.05);
+  --card-hover: rgba(0, 0, 0, 0.05);
+  --nav-bg: rgba(240, 242, 245, 0.8);
 }
 
 * {
