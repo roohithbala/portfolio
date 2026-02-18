@@ -1,0 +1,31 @@
+.footer {
+  padding: 2rem 0;
+  background: #050505;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+}
+
+.copyright {
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.made-with {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.heart-icon {
+  color: #ff4757;
+  animation: beat 1s infinite alternate;
+}
+
+@keyframes beat {
+  to {
+    transform: scale(1.1);
+  }
+}
