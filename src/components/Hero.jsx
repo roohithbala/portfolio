@@ -23,7 +23,7 @@ const Hero = () => {
           </p>
           <div className="hero-btns">
             <a href="#projects" className="btn btn-primary">View Projects</a>
-            <a href="https://drive.google.com/file/d/1ZoQrDe98DKjs2rI4LIjnCGnZHdwClM_b/view?usp=sharing" className="btn btn-outline" target="_blank" rel="noopener noreferrer">Download Resume</a>
+            <a href="https://www.canva.com/design/DAHBppkDhag/wzguS20KlqFA8p8NIP0ysw/view?utm_content=DAHBppkDhag&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hfd66ef4b29" className="btn btn-outline" target="_blank" rel="noopener noreferrer">Download Resume</a>
           </div>
         </motion.div>
 
