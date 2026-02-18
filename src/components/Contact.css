@@ -1,7 +1,7 @@
 .contact-section {
   padding: 100px 0;
   position: relative;
-  background: radial-gradient(circle at bottom right, #1a1a2e 0%, #0a0a0a 100%);
+  background: var(--bg-gradient);
 }
 
 .contact-content {
@@ -18,7 +18,7 @@
 .contact-info h3 {
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
-  color: #fff;
+  color: var(--text-primary);
 }
 
 .contact-info p {
@@ -45,7 +45,7 @@
 }
 
 .contact-item a {
-  color: #fff;
+  color: var(--text-primary);
   font-weight: 500;
 }
 
@@ -63,10 +63,10 @@
 .form-group textarea {
   width: 100%;
   padding: 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
   border-radius: 10px;
-  color: #fff;
+  color: var(--text-primary);
   font-family: inherit;
   font-size: 1rem;
   transition: all 0.3s;
@@ -76,7 +76,7 @@
 .form-group textarea:focus {
   outline: none;
   border-color: var(--accent-color);
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--glass-bg);
   box-shadow: 0 0 10px rgba(0, 212, 255, 0.1);
 }
 

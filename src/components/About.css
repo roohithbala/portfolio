@@ -28,7 +28,7 @@
 
 .achievement-highlight {
   font-weight: 700;
-  color: #fff;
+  color: var(--text-primary);
   margin-top: 1rem;
   border-left: 4px solid var(--accent-color);
   padding-left: 1rem;
@@ -36,15 +36,15 @@
 
 .quick-facts {
   padding: 2rem;
-  background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+  background: var(--glass-bg);
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
 }
 
 .h3-title {
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
-  color: #fff;
+  color: var(--text-primary);
   border-bottom: 2px solid var(--accent-color);
   display: inline-block;
   padding-bottom: 0.5rem;

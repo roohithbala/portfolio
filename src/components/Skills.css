@@ -1,6 +1,6 @@
 .skills-section {
   padding: 100px 0;
-  background: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #0a0a0a 100%);
+  background: var(--bg-gradient);
 }
 
 .skills-grid {
@@ -26,7 +26,7 @@
 .skill-card h3 {
   font-size: 1.4rem;
   margin-bottom: 1rem;
-  color: #fff;
+  color: var(--text-primary);
 }
 
 .skill-items {
@@ -34,7 +34,7 @@
   font-weight: 600;
   margin-bottom: 1rem;
   font-size: 0.95rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid var(--glass-border);
   padding-bottom: 1rem;
 }
 

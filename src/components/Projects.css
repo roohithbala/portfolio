@@ -55,7 +55,7 @@
 }
 
 .project-link {
-  color: #fff;
+  color: #fff; /* Keep white on overlay */
   font-size: 2rem;
   margin: 0 1rem;
   transition: color 0.2s;
@@ -76,7 +76,7 @@
   font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 0.8rem;
-  color: #fff;
+  color: var(--text-primary);
 }
 
 .project-desc {
@@ -95,11 +95,12 @@
 
 .project-tag {
   font-size: 0.8rem;
-  background: rgba(0, 212, 255, 0.1);
+  background: var(--glass-bg);
   color: var(--accent-color);
   padding: 0.3rem 0.8rem;
   border-radius: 50px;
   font-weight: 600;
+  border: 1px solid var(--glass-border);
 }
 
 .view-more {
