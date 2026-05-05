@@ -5,39 +5,39 @@ import './Projects.css';
 const Projects = () => {
   const projects = [
     {
+      title: "Consultancy Project",
+      desc: "Developed a professional business website for Zain Fabrics to showcase their products, services, and brand identity, improving their online presence and customer reach.",
+      tags: ["Web Development", "UI/UX", "Business Website"],
+      links: { github: "https://github.com/roohithbala/consultancy" },
+      img: "https://images.unsplash.com/photo-1542204165-65bf26472b9b?w=600&auto=format&fit=crop&q=80"
+    },
+    {
       title: "AI Bug Tracker",
-      desc: "Built a full-stack AI-based system to analyze error logs securely and identify issues with suggested fixes.",
+      desc: "Engineered a full-stack AI-powered system that analyzes error logs and provides intelligent diagnostics with suggested fixes using Gemini AI. Implements secure authentication and efficient data storage.",
       tags: ["Python", "Flask", "React.js", "Gemini AI", "SQLite"],
       links: { github: "https://github.com/roohithbala/ai-bug-tracker" },
-      img: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=600&auto=format&fit=crop&q=80" // Code/AI related
+      img: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=600&auto=format&fit=crop&q=80"
     },
     {
       title: "PlaceHub",
-      desc: "Anonymous placement preparation platform connecting students with mentors and experiences.",
+      desc: "Developed an anonymous placement preparation platform that facilitates meaningful connections between students and experienced mentors. Features secure user management and experience sharing.",
       tags: ["React JS", "MongoDB", "Express.js"],
-      links: { github: "https://github.com/roohithbala/ai-bug-tracker" }, // Keeping user provided link despite duplicate suspicion
-      img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&auto=format&fit=crop&q=80" // Students/Mentorship
+      links: { github: "https://github.com/roohithbala/placement" },
+      img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&auto=format&fit=crop&q=80"
     },
     {
       title: "Finance Management App",
-      desc: "Built a chat-based personal finance mobile application using React Native with Express and MongoDB backend.",
+      desc: "Built a sophisticated chat-based personal finance application with React Native frontend and Node.js backend. Provides intuitive financial tracking and management capabilities.",
       tags: ["React Native", "MongoDB", "Express.js"],
       links: { github: "https://github.com/roohithbala/finance-app" },
-      img: "https://images.unsplash.com/photo-1554224155-98406858d0ade?w=600&auto=format&fit=crop&q=80" // Finance
+      img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop&q=80"
     },
     {
-      title: "Library Management System",
-      desc: "A comprehensive library management solution with AI-powered smart search capabilities, inventory tracking, and user management.",
-      tags: ["Python", "Flask", "SQL", "AI", "REST API"],
-      links: { github: "https://github.com/roohithbala/libmanagement" },
-      img: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=600"
-    },
-    {
-      title: "Movie Ticket Management",
-      desc: "A web application for booking and managing movie tickets, featuring seat selection, payment integration, and user authentication.",
-      tags: ["Python", "Flask", "Bootstrap"],
-      links: { github: "https://github.com/Ponkanimozhi-Sakthivel/movieticketbooking" },
-      img: "https://media.istockphoto.com/id/1392208349/photo/conceptual-photo-of-going-to-a-movie-theater.webp?b=1&s=170667a&w=0&k=20&c=wdmb9d99c4h-eU9PbdWqpj4YFDn_g7wR0cCLUEcTXRc="
+      title: "Wildlife Monitoring",
+      desc: "Developed a comprehensive wildlife monitoring solution utilizing AI and computer vision to track animal behavior and support conservation efforts.",
+      tags: ["Python", "Computer Vision", "AI", "Machine Learning"],
+      links: { github: "https://github.com/roohithbala/wildlifemonitoring" },
+      img: "https://images.unsplash.com/photo-1518331647614-7a1f04cd34cb?w=600&auto=format&fit=crop&q=80"
     }
   ];
 

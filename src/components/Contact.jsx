@@ -42,6 +42,15 @@ const Contact = () => {
         >
           Get In Touch
         </motion.h2>
+        <motion.p
+          className="section-subtitle"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
+          Have a project in mind? Let's collaborate and build something amazing together.
+        </motion.p>
 
         <div className="contact-content">
           <motion.div 
@@ -51,10 +60,9 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3>Let's Connect</h3>
+            <h3>Connect With Me</h3>
             <p>
-              I'm currently open to freelance opportunities and interesting projects. 
-              Whether you have a question or just want to say hi, I'll try my best to get back to you!
+              I'm open to new opportunities, collaborations, and interesting projects. Feel free to reach out through any of the channels below, and I'll get back to you as soon as possible.
             </p>
             
             <div className="contact-details">

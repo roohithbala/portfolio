@@ -1,28 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap');
+
 :root {
-  --bg-color: #0a0a0a;
-  --bg-gradient: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
-  --text-primary: #ffffff;
-  --text-secondary: #a0a0a0;
-  --accent-color: #00d4ff;
-  --accent-gradient: linear-gradient(90deg, #00d4ff 0%, #0056b3 100%);
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --card-hover: rgba(255, 255, 255, 0.1);
+  --bg-color: #000000;
+  --bg-gradient: linear-gradient(to bottom right, #000000, #0a0a0a);
+  --text-primary: #f3f4f6;
+  --text-secondary: #9ca3af;
+  --text-tertiary: #6b7280;
+  --accent-color: #3b82f6;
+  --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  --accent-secondary: #8b5cf6;
+  --glass-bg: rgba(25, 25, 25, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.05);
+  --card-hover: rgba(255, 255, 255, 0.08);
   --font-main: 'Inter', sans-serif;
-  --nav-bg: rgba(10, 10, 10, 0.8);
+  --font-mono: 'Fira Code', monospace;
+  --nav-bg: rgba(0, 0, 0, 0.85);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
 }
 
 [data-theme="light"] {
-  --bg-color: #f0f2f5;
-  --bg-gradient: linear-gradient(135deg, #f0f2f5 0%, #e1e4e8 100%);
-  --text-primary: #1a1a2e;
-  --text-secondary: #4a4a4a;
-  --accent-color: #007bff;
-  --accent-gradient: linear-gradient(90deg, #007bff 0%, #0056b3 100%);
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(0, 0, 0, 0.05);
+  --bg-color: #ffffff;
+  --bg-gradient: linear-gradient(to bottom right, #ffffff, #f3f4f6);
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-tertiary: #6b7280;
+  --accent-color: #2563eb;
+  --accent-gradient: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+  --accent-secondary: #7c3aed;
+  --glass-bg: rgba(255, 255, 255, 0.9);
+  --glass-border: rgba(0, 0, 0, 0.1);
   --card-hover: rgba(0, 0, 0, 0.05);
-  --nav-bg: rgba(240, 242, 245, 0.8);
+  --nav-bg: rgba(255, 255, 255, 0.9);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
 }
 
 * {
@@ -39,6 +50,7 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   line-height: 1.6;
+  letter-spacing: -0.02em;
 }
 
 a {
@@ -57,25 +69,20 @@ button {
   font-family: inherit;
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
-
 ::-webkit-scrollbar-track {
   background: var(--bg-color);
 }
-
 ::-webkit-scrollbar-thumb {
   background: #333;
-  border-radius: 5px;
+  border-radius: 4px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-color);
+  background: var(--text-tertiary);
 }
 
-/* Utility Classes */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -84,37 +91,61 @@ button {
 
 .section-title {
   font-size: 2.5rem;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 3rem;
-  background: var(--accent-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+  font-weight: 800;
+  text-align: left;
+  margin-bottom: 3.5rem;
+  color: var(--text-primary);
+  letter-spacing: -0.05em;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section-title::after {
+  content: '';
+  height: 1px;
+  flex-grow: 1;
+  background: var(--glass-border);
 }
 
 .btn {
-  padding: 0.8rem 1.5rem;
-  border-radius: 50px;
-  font-weight: 600;
-  transition: transform 0.2s, box-shadow 0.2s;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .btn-primary {
-  background: var(--accent-gradient);
-  color: #fff;
-  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+  background: var(--text-primary);
+  color: var(--bg-color);
+  transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 212, 255, 0.4);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: var(--glass-bg);
+  border-color: var(--text-secondary);
 }
 
 .glass {
   background: var(--glass-bg);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: 1px solid var(--glass-border);
-  border-radius: 15px;
+  border-radius: 16px;
 }

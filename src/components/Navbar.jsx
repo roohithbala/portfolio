@@ -28,7 +28,7 @@ const Navbar = ({ theme, toggleTheme }) => {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="container nav-container">
         <a href="#home" className="logo">
-          Roohith<span className="dot">.</span>
+          Roohith Bala
         </a>
 
         <div className="desktop-menu">
@@ -41,11 +41,11 @@ const Navbar = ({ theme, toggleTheme }) => {
             {theme === 'dark' ? <FaSun /> : <FaMoon />}
           </button>
           <div className="social-icons">
-            <a href="https://github.com/roohithbala" target="_blank" rel="noopener noreferrer">
-              <FaGithub />
-            </a>
-            <a href="https://linkedin.com/in/roohithbala" target="_blank" rel="noopener noreferrer">
+            <a href="https://linkedin.com/in/roohithbala" target="_blank" rel="noopener noreferrer" title="Connect on LinkedIn">
               <FaLinkedin />
+            </a>
+            <a href="https://github.com/roohithbala" target="_blank" rel="noopener noreferrer" title="View on GitHub">
+              <FaGithub />
             </a>
           </div>
         </div>

@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
+import Typewriter from 'typewriter-effect';
 import profileImg from '../assets/profile.jpg';
+import { FaGithub, FaLinkedin, FaFileDownload } from 'react-icons/fa';
 import './Hero.css';
 
 const Hero = () => {
@@ -8,28 +10,48 @@ const Hero = () => {
       <div className="container hero-container">
         <motion.div 
           className="hero-content"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
+          <span className="hero-badge">Hello,</span>
           <h1 className="hero-title">
-            Hi, I'm <span className="highlight">Roohith Bala</span>
+            I'm <span className="gradient-text">ROOHITH BALA</span>
           </h1>
           <h2 className="hero-subtitle">
-            Building <span className="text-gradient">Professional-Grade</span> Web Applications
+            <Typewriter
+              options={{
+                strings: ["Software Engineer", "Full Stack Developer", "AI Enthusiast"],
+                autoStart: true,
+                loop: true,
+                delay: 50,
+                deleteSpeed: 30
+              }}
+            />
           </h2>
           <p className="hero-description">
-            I'm a Full Stack Developer | Backend Engineer | AI Enthusiast specializing in building exceptional digital experiences with Python, Flask, and AI-powered solutions.
+            I am a dedicated and curious Computer Science student with a strong interest in
+            full-stack web development and artificial intelligence. I enjoy creating
+            real-world applications that combine clean design with smart functionality.
           </p>
           <div className="hero-btns">
-            <a href="#projects" className="btn btn-primary">View Projects</a>
-            <a href="https://www.canva.com/design/DAHBppkDhag/wzguS20KlqFA8p8NIP0ysw/view?utm_content=DAHBppkDhag&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hfd66ef4b29" className="btn btn-outline" target="_blank" rel="noopener noreferrer">Download Resume</a>
+            <a href="#projects" className="btn btn-primary">
+              View Projects
+            </a>
+            <a href="https://www.canva.com/design/DAHBppkDhag/wzguS20KlqFA8p8NIP0ysw/view?utm_content=DAHBppkDhag&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hfd66ef4b29" className="btn btn-outline" target="_blank" rel="noopener noreferrer">
+              <FaFileDownload /> Resume
+            </a>
+          </div>
+          
+          <div className="social-links-minimal">
+             <a href="https://github.com/roohithbala" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
+             <a href="https://linkedin.com/in/roohithbala" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
           </div>
         </motion.div>
 
         <motion.div 
           className="hero-image-wrapper"
-          initial={{ opacity: 0, scale: 0.8 }}
+          initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >

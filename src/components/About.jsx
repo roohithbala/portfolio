@@ -1,7 +1,17 @@
 import { motion } from 'framer-motion';
+import { FaCode, FaGamepad, FaCompass, FaBook, FaMusic, FaCamera } from 'react-icons/fa';
 import './About.css';
 
 const About = () => {
+  const interests = [
+    { icon: <FaCode />, label: "Developer" },
+    { icon: <FaGamepad />, label: "Gamer" },
+    { icon: <FaCompass />, label: "Explorer" },
+    { icon: <FaBook />, label: "Reader" },
+    { icon: <FaMusic />, label: "Music Lover" },
+    { icon: <FaCamera />, label: "Photographer" }
+  ];
+
   return (
     <section id="about" className="about-section">
       <div className="container">
@@ -18,40 +28,38 @@ const About = () => {
         <div className="about-content">
           <motion.div 
             className="about-text glass"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
             <p>
-              My journey into web development began with a fascination for building systems that solve real-world problems. I've developed a strong focus on <span className="highlight">full-stack applications</span> with particular expertise in backend development.
+              I'm a passionate Computer Science student currently pursuing my engineering degree, 
+              driven by curiosity and a love for solving complex problems through code.
             </p>
             <p>
-              I specialize in creating <span className="highlight">professional-grade platforms</span> that are secure, scalable, and efficient. My experience spans across various domains including <span className="highlight">database design</span>, <span className="highlight">API development</span>, and <span className="highlight">cloud deployment</span>.
-            </p>
-            <p>
-              Recently, I've been exploring <span className="highlight">AI-powered systems</span> and integrating them into web applications to create smarter, more intuitive user experiences. I'm passionate about building solutions that not only work reliably but also evolve with changing needs.
-            </p>
-            <p className="achievement-highlight">
-              🏆 1st Prize Winner at Hawk Eye's Coding Event
+              When I'm not coding, you'll find me exploring new technologies, gaming, or listening to music. 
+              I specialize in backend architecture and AI integration, and my passion lies in building scalable, 
+              secure applications that solve real-world problems.
             </p>
           </motion.div>
 
-          <motion.div 
-            className="quick-facts"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <h3 className="h3-title">Quick Facts</h3>
-            <ul className="fact-list">
-              <li><span>▹</span> Full-Stack Developer with backend focus</li>
-              <li><span>▹</span> Experienced in Python, Flask, React</li>
-              <li><span>▹</span> Database design specialist (SQL, MongoDB)</li>
-              <li><span>▹</span> AI Integration Enthusiast</li>
-            </ul>
-          </motion.div>
+          <div className="interests-marquee">
+            <div className="marquee-content">
+              {interests.map((item, index) => (
+                <div key={index} className="interest-item">
+                  <span className="interest-icon">{item.icon}</span>
+                  <span className="interest-label">{item.label}</span>
+                </div>
+              ))}
+              {interests.map((item, index) => (
+                <div key={`clone-${index}`} className="interest-item">
+                  <span className="interest-icon">{item.icon}</span>
+                  <span className="interest-label">{item.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

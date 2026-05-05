@@ -4,14 +4,13 @@ import './Skills.css';
 
 const Skills = () => {
   const skills = [
-    { title: "Languages", icon: <FaCode />, items: "Python, SQL, HTML, CSS, JavaScript, C, C++", desc: "Built Payroll Management System using Python & SQL." },
-    { title: "Frameworks", icon: <FaServer />, items: "Flask, Bootstrap, jQuery", desc: "Developed Library Management System with Flask." },
-    { title: "Databases", icon: <FaDatabase />, items: "MongoDB, MySQL, SQLite, PostgreSQL", desc: "Implemented robust data storage for Movie Ticket Management." },
-    { title: "Frontend", icon: <FaGlobe />, items: "HTML5, CSS3, Bootstrap, React", desc: "Designed responsive UIs for various platforms." },
-    { title: "Cloud & DevOps", icon: <FaCloud />, items: "Git, GitHub, Heroku, Vercel", desc: "Deployed apps using GitHub and Heroku CI/CD." },
-    { title: "AI & Data Science", icon: <FaBrain />, items: "NumPy, Pandas, scikit-learn", desc: "Integrated AI features in Library Management System." },
-    { title: "Security", icon: <FaLock />, items: "JWT, OAuth, HTTPS", desc: "Implemented secure auth in multiple projects." },
-    { title: "Tools", icon: <FaTools />, items: "VS Code, Postman, Figma, Linux", desc: "Used Postman for API testing and Figma for prototyping." }
+    { title: "Languages", icon: <FaCode />, items: "Python, SQL, HTML, CSS, JavaScript, C, C++", desc: "Proficient in building efficient algorithms and managing complex data structures." },
+    { title: "Frameworks", icon: <FaServer />, items: "Flask, Express.js, Bootstrap, React.js", desc: "Experienced in building scalable backend services and responsive frontend applications." },
+    { title: "Databases", icon: <FaDatabase />, items: "MongoDB, MySQL, SQLite, PostgreSQL", desc: "Expertise in database design, optimization, and complex query development." },
+    { title: "Frontend", icon: <FaGlobe />, items: "React, HTML5, CSS3, Framer Motion", desc: "Creating interactive, responsive, and accessible user interfaces with modern frameworks." },
+    { title: "Cloud & DevOps", icon: <FaCloud />, items: "Git, GitHub, Vercel, Netlify", desc: "Proficient in version control, CI/CD pipelines, and cloud deployment strategies." },
+    { title: "Security", icon: <FaLock />, items: "JWT, OAuth2, HTTPS, Data Encryption", desc: "Implementing industry-standard security protocols and authentication mechanisms." },
+    { title: "Tools & Platforms", icon: <FaTools />, items: "VS Code, Postman, Figma, Linux, Docker", desc: "Proficient with development tools for efficient workflow and collaboration." }
   ];
 
   return (

@@ -9,40 +9,32 @@ const Experience = () => {
       icon: <FaGraduationCap />,
       title: "Kongu Engineering College",
       period: "2023 - 2027",
-      subtitle: "B.E in Computer Science And Design",
-      desc: "Current CGPA: 8.5/10 | Data Structures | Algorithms | Database Systems"
+      subtitle: "B.E in Computer Science and Design",
+      desc: "CGPA: 8.5/10 | Specialized in Data Structures, Algorithms, and Database Systems"
     },
     {
       type: "position",
       icon: <FaUsers />,
       title: "Executive Member, CSD Coding Club",
       period: "2024 - Present",
-      subtitle: "Computer Science And Design Coding Club",
-      desc: "Organized coding events, national level hackathon, and technical workshops to foster coding culture and peer learning."
+      subtitle: "College Technical Organization",
+      desc: "Organizing coding competitions, hackathons, and technical workshops. Building strong coding culture and facilitating peer knowledge sharing."
     },
     {
       type: "award",
       icon: <FaTrophy />,
-      title: "Hawk Eyes Coding Event",
+      title: "Hawk Eyes Coding Championship",
       period: "2024",
       subtitle: "1st Prize Winner",
-      desc: "Competitive Programming | Algorithm Optimization | Time Management"
-    },
-    {
-      type: "award",
-      icon: <FaUsers />,
-      title: "Zeal Quest Competition",
-      period: "2024",
-      subtitle: "Prize Winner",
-      desc: "Critical thinking | Teamwork"
+      desc: "Outstanding performance in competitive programming and algorithm optimization"
     },
     {
       type: "award",
       icon: <FaTrophy />,
-      title: "Codefest Coding Event",
+      title: "Codefest 2025",
       period: "2025",
       subtitle: "2nd Prize Winner",
-      desc: "Problem Solving | Coding Challenges | Teamwork"
+      desc: "Exceptional problem-solving skills and coding efficiency"
     },
     {
       type: "award",
@@ -50,7 +42,15 @@ const Experience = () => {
       title: "Envistas Coding Competition",
       period: "2025",
       subtitle: "3rd Prize Winner",
-      desc: "Algorithm Design | Problem Solving | Competitive Programming"
+      desc: "Strong algorithm design and competitive programming abilities"
+    },
+    {
+      type: "award",
+      icon: <FaUsers />,
+      title: "Zeal Quest Competition",
+      period: "2024",
+      subtitle: "Prize Winner",
+      desc: "Demonstrated critical thinking and excellent teamwork"
     }
   ];
 
