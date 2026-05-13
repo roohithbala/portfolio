@@ -39,7 +39,7 @@ const Hero = () => {
                 View Projects
               </a>
               <a href="/portfolio/Resume.pdf" className="btn btn-outline" target="_blank" rel="noopener noreferrer">
-                <FaFileDownload /> RoohithBalaResume
+                <FaFileDownload /> Resume
               </a>
           </div>
           
