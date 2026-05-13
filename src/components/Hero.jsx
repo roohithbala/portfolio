@@ -35,12 +35,12 @@ const Hero = () => {
             real-world applications that combine clean design with smart functionality.
           </p>
           <div className="hero-btns">
-            <a href="#projects" className="btn btn-primary">
-              View Projects
-            </a>
-            <a href="https://www.canva.com/design/DAHBppkDhag/wzguS20KlqFA8p8NIP0ysw/view?utm_content=DAHBppkDhag&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hfd66ef4b29" className="btn btn-outline" target="_blank" rel="noopener noreferrer">
-              <FaFileDownload /> Resume
-            </a>
+              <a href="#projects" className="btn btn-primary">
+                View Projects
+              </a>
+              <a href="/portfolio/Resume.pdf" className="btn btn-outline" target="_blank" rel="noopener noreferrer">
+                <FaFileDownload /> RoohithBalaResume
+              </a>
           </div>
           
           <div className="social-links-minimal">
