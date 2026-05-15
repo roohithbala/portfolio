@@ -65,16 +65,6 @@ const Certifications = () => {
       color: "#47A248",
       verified: true
     },
-    {
-      type: "award",
-      title: "Zeal Quest Competition - 2nd Prize Winner",
-      issuer: "Zeal Quest",
-      date: "2024",
-      desc: "Demonstrated critical thinking and excellent teamwork",
-      icon: <FaTrophy />,
-      color: "#FFD700",
-      verified: false
-    }
   ];
 
   return (
