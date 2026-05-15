@@ -130,7 +130,7 @@ const Certifications = () => {
                 
                 {item.desc && <p className="cert-desc">{item.desc}</p>}
                 
-                {item.link ? (
+                {item.link && (
                   <a 
                     href={item.link} 
                     target="_blank" 
@@ -140,10 +140,6 @@ const Certifications = () => {
                     <span>Verify Credential</span>
                     <FaExternalLinkAlt />
                   </a>
-                ) : (
-                  <div className="award-achievement-tag">
-                    Official Recognition
-                  </div>
                 )}
               </div>
               
