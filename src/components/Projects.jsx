@@ -33,11 +33,11 @@ const Projects = () => {
       img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop&q=80"
     },
     {
-      title: "Wildlife Monitoring",
-      desc: "Developed a comprehensive wildlife monitoring solution utilizing AI and computer vision to track animal behavior and support conservation efforts.",
-      tags: ["Python", "Computer Vision", "AI", "Machine Learning"],
-      links: { github: "https://github.com/roohithbala/wildlifemonitoring" },
-      img: "https://images.unsplash.com/photo-1518331647614-7a1f04cd34cb?w=600&auto=format&fit=crop&q=80"
+      title: "AI Project Idea Generator",
+      desc: "Developed an AI-powered system that generates innovative and tailored project ideas using Gemini AI. Helps developers overcome creative blocks by providing detailed project roadmaps and tech stack recommendations.",
+      tags: ["AI", "Gemini API", "React.js", "Node.js"],
+      links: { github: "https://github.com/roohithbala/freelancers_hackathon" },
+      img: "https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=600&auto=format&fit=crop&q=80"
     }
   ];
 
