@@ -120,3 +120,32 @@
     justify-content: center;
   }
 }
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+  .hero-subtitle {
+    font-size: 1.5rem;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  .hero-subtitle {
+    font-size: 1.25rem;
+  }
+  .hero-btns {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto 2rem;
+  }
+  .hero-btns .btn {
+    justify-content: center;
+  }
+}

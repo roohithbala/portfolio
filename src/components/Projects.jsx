@@ -95,6 +95,22 @@ const Projects=()=>{
                     <span key={i} className="project-tag">{tag}</span>
                   ))}
                 </div>
+                <div className="project-mobile-links">
+                  <a href={project.links.github} target="_blank" rel="noopener noreferrer" className="project-mobile-link">
+                    <FaGithub /> GitHub
+                  </a>
+                  {project.links.site && (
+                    <a 
+                      href={project.links.site} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="project-mobile-link"
+                      download={project.links.site.endsWith('.aab') ? true : undefined}
+                    >
+                      <FaExternalLinkAlt /> {project.links.site.endsWith('.aab') ? "App Bundle" : "Live Demo"}
+                    </a>
+                  )}
+                </div>
               </div>
             </motion.div>
           ))}

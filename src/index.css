@@ -149,3 +149,20 @@ button {
   border: 1px solid var(--glass-border);
   border-radius: 16px;
 }
+
+@media(max-width:768px){
+  .section-title{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media(max-width:480px){
+  .container{
+    padding:0 1.25rem;
+  }
+  .section-title{
+    font-size:1.75rem;
+    margin-bottom:1.5rem;
+  }
+}

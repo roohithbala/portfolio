@@ -38,9 +38,6 @@ const Navbar = ({ theme, toggleTheme }) => {
               {link.name}
             </a>
           ))}
-          <button className="theme-toggle" onClick={toggleTheme}>
-            {theme === 'dark' ? <FaSun /> : <FaMoon />}
-          </button>
           <div className="social-icons">
             <a href="https://linkedin.com/in/roohithbala" target="_blank" rel="noopener noreferrer" title="Connect on LinkedIn">
               <FaLinkedin />
@@ -51,9 +48,14 @@ const Navbar = ({ theme, toggleTheme }) => {
           </div>
         </div>
 
-        <button className="menu-toggle" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <FaTimes /> : <FaBars />}
-        </button>
+        <div className="nav-actions">
+          <button className="theme-toggle" onClick={toggleTheme}>
+            {theme === 'dark' ? <FaSun /> : <FaMoon />}
+          </button>
+          <button className="menu-toggle" onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? <FaTimes /> : <FaBars />}
+          </button>
+        </div>
 
         <AnimatePresence>
           {isOpen && (

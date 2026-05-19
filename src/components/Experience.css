@@ -115,3 +115,22 @@
     text-align: left;
   }
 }
+
+@media (max-width: 480px) {
+  .timeline::before {
+    left: 20px;
+  }
+  .timeline-item {
+    padding-left: 50px;
+    padding-bottom: 2rem;
+  }
+  .timeline-icon {
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  .timeline-content {
+    padding: 1.25rem;
+  }
+}
