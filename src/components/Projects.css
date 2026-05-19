@@ -56,13 +56,29 @@
   opacity: 1;
 }
 
+.project-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
 .project-link {
   color: #fff;
-  font-size: 2rem;
+  font-size: 1.8rem;
   background: rgba(255,255,255,0.2);
-  padding: 1rem;
+  width: 3.8rem;
+  height: 3.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
   backdrop-filter: blur(4px);
+  transition: all 0.3s ease;
+}
+
+.project-link:hover {
+  background: var(--text-primary);
+  color: var(--bg-color);
+  transform: scale(1.15);
 }
 
 .project-content {
