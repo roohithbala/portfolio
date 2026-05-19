@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run build && node -e \"require('fs').copyFileSync('.gitattributes', 'dist/.gitattributes')\"",
+    "predeploy": "npm run build && node -e \"try { require('fs').unlinkSync('dist/SecureFinance.aab'); } catch(e) {}\"",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {

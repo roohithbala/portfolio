@@ -29,7 +29,7 @@ const Projects=()=>{
       title:"Finance Management App",
       desc:"Built a sophisticated chat-based personal finance application with React Native frontend and Node.js backend. Provides intuitive financial tracking and management capabilities.",
       tags:["React Native","MongoDB","Express.js"],
-      links:{github:"https://github.com/roohithbala/finance-app",site:"/portfolio/SecureFinance.aab"},
+      links:{github:"https://github.com/roohithbala/finance-app",site:"https://github.com/roohithbala/portfolio/raw/main/public/SecureFinance.aab"},
       img:"https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop&q=80"
     },
     {
