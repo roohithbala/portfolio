@@ -1,34 +1,56 @@
 import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaPaperPlane, FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa';
-import emailjs from '@emailjs/browser';
+import axios from 'axios';
 import './Contact.css';
 
 const Contact = () => {
   const formRef = useRef();
   const [formStatus, setFormStatus] = useState(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const lastSent = localStorage.getItem('last_sent');
+    if (lastSent && Date.now() - parseInt(lastSent, 10) < 180000) {
+      setFormStatus('rate-limited');
+      setTimeout(() => setFormStatus(null), 5000);
+      return;
+    }
     setFormStatus('sending');
-
-    emailjs.sendForm(
-      import.meta.env.VITE_EMAILJS_SERVICE_ID,
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-      formRef.current,
-      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-    )
-      .then((result) => {
+    const fd = new FormData(formRef.current);
+    const payload = {
+      name: fd.get('name'),
+      email: fd.get('email'),
+      message: fd.get('message')
+    };
+    try {
+      const url = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
+      if (!url) {
+        console.error('VITE_GOOGLE_SCRIPT_URL is not set');
+        setFormStatus('error');
+        setTimeout(() => setFormStatus(null), 5000);
+        return;
+      }
+      const res = await axios.post(url, payload, {
+        headers: { 'Content-Type': 'text/plain' }
+      });
+      if (res.data && res.data.success) {
         setFormStatus('success');
+        localStorage.setItem('last_sent', Date.now().toString());
         formRef.current.reset();
         setTimeout(() => setFormStatus(null), 5000);
-      }, (error) => {
-        console.error('Error:', error);
-        setFormStatus('error');
-        alert('Failed to send message. Please check your EmailJS configuration.');
-        setTimeout(() => setFormStatus(null), 3000);
-      });
+      } else {
+        console.error(res.data?.error || 'API Error');
+        setFormStatus(res.data?.error === 'Rate limit reached' ? 'rate-limited' : 'error');
+        setTimeout(() => setFormStatus(null), 5000);
+      }
+    } catch (err) {
+      console.error(err);
+      setFormStatus('error');
+      setTimeout(() => setFormStatus(null), 5000);
+    }
   };
+
 
   return (
     <section id="contact" className="contact-section">
@@ -99,11 +121,13 @@ const Contact = () => {
             <div className="form-group">
               <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
             </div>
-            <button type="submit" className="btn btn-primary" disabled={formStatus === 'sending' || formStatus === 'success'}>
-              {formStatus === 'sending' ? 'Sending...' : formStatus === 'success' ? 'Message Sent!' : (
+            <button type="submit" className="btn btn-primary" disabled={formStatus === 'sending' || formStatus === 'success' || formStatus === 'rate-limited'}>
+              {formStatus === 'sending' ? 'Sending...' : formStatus === 'success' ? 'Message Sent!' : formStatus === 'rate-limited' ? 'Wait a bit' : (
                 <>Send Message <FaPaperPlane className="ms-2" /></>
               )}
             </button>
+            {formStatus === 'rate-limited' && <p className="status-msg error">Rate limit reached. Please wait a few minutes before sending another message.</p>}
+            {formStatus === 'error' && <p className="status-msg error">Failed to send message. Please try again later.</p>}
           </motion.form>
         </div>
       </div>

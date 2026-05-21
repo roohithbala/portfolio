@@ -102,3 +102,19 @@
     word-break: break-all;
   }
 }
+
+.status-msg {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.status-msg.error {
+  color: #ef4444;
+}
+
+.status-msg.success {
+  color: #10b981;
+}
+
