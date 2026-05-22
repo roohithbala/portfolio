@@ -1,7 +1,7 @@
+"use client";
 import { motion } from 'framer-motion';
 import { FaExternalLinkAlt, FaCheckCircle, FaTrophy, FaMedal } from 'react-icons/fa';
 import { SiOracle, SiMongodb } from 'react-icons/si';
-import './Certifications.css';
 
 const Certifications = () => {
   const achievements = [

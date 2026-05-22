@@ -1,6 +1,6 @@
+"use client";
 import { motion } from 'framer-motion';
 import { FaCode, FaGamepad, FaCompass, FaBook, FaMusic, FaCamera } from 'react-icons/fa';
-import './About.css';
 
 const About = () => {
   const interests = [

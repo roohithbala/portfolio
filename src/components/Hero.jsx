@@ -1,8 +1,8 @@
+"use client";
 import { motion } from 'framer-motion';
 import Typewriter from 'typewriter-effect';
 import profileImg from '../assets/profile.jpg';
 import { FaGithub, FaLinkedin, FaFileDownload } from 'react-icons/fa';
-import './Hero.css';
 
 const Hero = () => {
   return (
@@ -56,7 +56,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <div className="img-backdrop"></div>
-          <img src={profileImg} alt="Roohith Bala" className="hero-image" />
+          <img src={profileImg.src} alt="Roohith Bala" className="hero-image" />
         </motion.div>
       </div>
     </section>

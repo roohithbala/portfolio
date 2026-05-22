@@ -1,53 +1,47 @@
+"use client";
 import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaPaperPlane, FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa';
 import axios from 'axios';
-import './Contact.css';
 
 const Contact = () => {
   const formRef = useRef();
   const [formStatus, setFormStatus] = useState(null);
-
-  const handleSubmit = async (e) => {
+  const handleSubmit=async(e)=>{
     e.preventDefault();
-    const lastSent = localStorage.getItem('last_sent');
-    if (lastSent && Date.now() - parseInt(lastSent, 10) < 180000) {
+    const lastSent=localStorage.getItem('last_sent');
+    if(lastSent&&Date.now()-parseInt(lastSent,10)<180000){
       setFormStatus('rate-limited');
-      setTimeout(() => setFormStatus(null), 5000);
+      setTimeout(()=>setFormStatus(null),5000);
       return;
     }
     setFormStatus('sending');
-    const fd = new FormData(formRef.current);
-    const payload = {
-      name: fd.get('name'),
-      email: fd.get('email'),
-      message: fd.get('message')
+    const fd=new FormData(formRef.current);
+    const payload={
+      name:fd.get('name'),
+      email:fd.get('email'),
+      message:fd.get('message')
     };
-    try {
-      const url = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
-      if (!url) {
-        console.error('VITE_GOOGLE_SCRIPT_URL is not set');
-        setFormStatus('error');
-        setTimeout(() => setFormStatus(null), 5000);
-        return;
-      }
-      const res = await axios.post(url, payload, {
-        headers: { 'Content-Type': 'text/plain' }
-      });
-      if (res.data && res.data.success) {
+    try{
+      const res=await axios.post(process.env.NEXT_PUBLIC_CONTACT_API_URL||'/api/contact',payload);
+      if(res.data&&res.data.success){
         setFormStatus('success');
-        localStorage.setItem('last_sent', Date.now().toString());
+        localStorage.setItem('last_sent',Date.now().toString());
         formRef.current.reset();
-        setTimeout(() => setFormStatus(null), 5000);
-      } else {
-        console.error(res.data?.error || 'API Error');
-        setFormStatus(res.data?.error === 'Rate limit reached' ? 'rate-limited' : 'error');
-        setTimeout(() => setFormStatus(null), 5000);
+        setTimeout(()=>setFormStatus(null),5000);
+      }else{
+        console.error(res.data?.error||'API Error');
+        setFormStatus(res.data?.error==='Rate limit reached'?'rate-limited':'error');
+        setTimeout(()=>setFormStatus(null),5000);
       }
-    } catch (err) {
+    }catch(err){
       console.error(err);
-      setFormStatus('error');
-      setTimeout(() => setFormStatus(null), 5000);
+      if(err.response?.status===429||err.response?.data?.error==='Rate limit reached'){
+        setFormStatus('rate-limited');
+      }else{
+        setFormStatus('error');
+      }
+      setTimeout(()=>setFormStatus(null),5000);
     }
   };
 

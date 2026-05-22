@@ -1,6 +1,6 @@
+"use client";
 import { motion } from 'framer-motion';
 import { FaGraduationCap, FaTrophy, FaUsers, FaAward } from 'react-icons/fa';
-import './Experience.css';
 
 const Experience = () => {
   const experiences = [

@@ -1,6 +1,6 @@
+"use client";
 import { motion } from 'framer-motion';
 import { FaPython, FaDatabase, FaHtml5, FaCss3Alt, FaJs, FaReact, FaGitAlt, FaLinux, FaLock, FaTools, FaBrain, FaServer, FaCode, FaGlobe, FaCloud } from 'react-icons/fa';
-import './Skills.css';
 
 const Skills = () => {
   const skills = [

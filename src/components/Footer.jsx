@@ -1,5 +1,5 @@
+"use client";
 import { FaHeart } from 'react-icons/fa';
-import './Footer.css';
 
 const Footer = () => {
   return (

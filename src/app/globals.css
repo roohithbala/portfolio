@@ -150,6 +150,26 @@ button {
   border-radius: 16px;
 }
 
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 99;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
 @media(max-width:768px){
   .section-title{
     font-size: 2rem;
