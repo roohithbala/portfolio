@@ -23,7 +23,8 @@ const Contact = () => {
       message:fd.get('message')
     };
     try{
-      const res=await axios.post(process.env.NEXT_PUBLIC_CONTACT_API_URL||'/api/contact',payload);
+      const targetUrl=(process.env.NEXT_PUBLIC_CONTACT_API_URL&&!process.env.NEXT_PUBLIC_CONTACT_API_URL.includes('script.google.com'))?process.env.NEXT_PUBLIC_CONTACT_API_URL:'/api/contact';
+      const res=await axios.post(targetUrl,payload);
       if(res.data&&res.data.success){
         setFormStatus('success');
         localStorage.setItem('last_sent',Date.now().toString());
